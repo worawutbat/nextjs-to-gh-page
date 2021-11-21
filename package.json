@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write '**/*.{js,tsx,css,scss,md}'"
+    "export": "npm run build && next export && touch out/.nojekyll",
+    "serve": "npm run export && serve out",
+    "deploy": "npm run export && node gh-pages.js"
   },
   "dependencies": {
     "chart.js": "^3.5.0",
